@@ -8,11 +8,64 @@ tr{
     background-color: lightcyan;
 }
 tr:nth-child(even){
-    background-color: lightskyblue;
+    background-color: lightsteelblue;
 }
 h1{
     size: 28xp;
     font-weight: bold;
     font-style: italic;
     font-family: fantasy;
+}
+div.menu {
+    height: 1.5cm;
+    background-color: lightsteelblue;
+    position: -ms-sticky;
+}
+div.menu > ul{
+    list-style: none;
+    display: inline-flex;
+}
+div.menu li > a[href$="#titre"]{
+    margin-left: 200px;
+}
+div.menu li > a {
+    margin-right: 200px;
+    text-decoration: solid;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.dropdown >  a {
+    margin-right: 200px;
+    text-decoration: solid;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;  
+    
+}
+.agriculture_types > a {
+    margin: 10px;
+}
+.agriculture_types{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    align-items: flex-start; 
+}
+.agriculture_types a{
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+.agriculture_types a:hover{
+    background-color:#f1f1f1;
+}
+.dropdown:hover .agriculture_types {
+    display: block;
 }

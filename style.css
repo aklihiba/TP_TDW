@@ -19,7 +19,9 @@ h1{
 div.menu {
     height: 1.5cm;
     background-color: lightsteelblue;
-    position: -ms-sticky;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 div.menu > ul{
     list-style: none;
@@ -68,4 +70,58 @@ div.menu li > a {
 }
 .dropdown:hover .agriculture_types {
     display: block;
+}
+
+div.container {
+    border: black;
+    width: 90%;
+    overflow: hidden;
+    display: inline-flex;
+    background-color: black;
+   
+}
+
+@keyframes diaporama {
+    
+    0% { -webkit-transform: translate(0, 0);}
+    33%{ -webkit-transform: translate(100%, 0);}
+    66%{ -webkit-transform: translate(200%, 0);}
+    100%{ -webkit-transform: translate(300%, 0);}
+}
+div.images {
+    width: 400%;
+    display: -webkit-inline-flex;
+    overflow: hidden;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+div.images > img {
+   width: 100%;
+   position: relative;
+   
+}
+.images {
+    -webkit-animation-name: diaporama ;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-transition-delay: 0s;
+}
+.images:hover {
+   -webkit-animation-play-state: paused;
+}
+
+#statistique{
+    display: inline-block;
+}
+
+div.tableau {
+    max-width: auto;
+    display: inline-flex;
+    
+}
+div.tableau > div{
+    padding-left: 50px;
+    padding-right: 50px;
 }

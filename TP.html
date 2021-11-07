@@ -3,6 +3,7 @@
 <head>    
     <title >Cooperative agricole</title>  
     <link href="style.css" rel="stylesheet" media="all" type="text/css">
+
     <script src="script.js"></script>
 <body>
  
@@ -17,12 +18,12 @@
     </div>
   </div>
  </center>
-  <div class="menu">
+  <div class="menu p-md-2">
     <ul>
-        <li><a href="#titre">Accueil</a></li>
+        <li><a  href="#titre">Accueil</a></li>
         <li>
             <div class="dropdown">
-            <a  href="#">type agriculture</a>
+            <a  href="#" style="text-decoration: none;">type agriculture</a>
             <div class="agriculture_types" >        
                 <a href="https://om.ciheam.org/om/pdf/c09/96605581.pdf" target="_blank" class="type_agriculture">agriculture conventionnelle</a>
                <a  href="https://youmatter.world/fr/definition/agriculture-biologique-definition-produits-regles/" target="_blank"class="type_agriculture">agriculture biologique</a>
@@ -37,19 +38,17 @@
         <li><a href="">contact</a></li>
     </ul>
   </div>
-    
+
     <center>
         <iframe width="560" height="315" style="margin: 20px;" src="https://www.youtube.com/embed/XLtRlzG8Jho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br/>
-    
- 
     </center>
 
     <section id="statisutique">
          <h2>Statistique</h2>
          <div class="tableau">
             <div>
-        <h3>Principale productions vegetales mondiales</h3>
-                 <table class="tableau" border="1px" style="border-collapse: collapse;">
+                 <h3>Principale productions végétales mondiales</h3>
+                 <table class="tableau" id="tab1" border="1px" style="border-collapse: collapse;" >
                     <thead>
                         <tr>
                             <th scope="col">Culture</th>
@@ -57,7 +56,7 @@
                             <th scope="col">Production totale (1 000 tonnes)</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tab1_body">
                         <tr>
                             <th scope="row"><u>Blé</u></th>
                             <td>220 417</td>
@@ -90,22 +89,26 @@
                             </tr>
                             <tr>
                             <th scope="row"><u>Pomme de terre</u></th>
-                            <td>19 098</td>
-                            
+                            <td>19 098</td>    
                         </tr>
                     </tbody>
+                    <tfoot>
+                        <th scope="row"><u>total</u></th>
+                        <td id="total0">696511</td>
+                        <td id="total1">3696417</td>
+                    </tfoot>
                  </table>
             </div>
             <div>
-                <h3>Principaux elevages mondiaux</h3>
-                <table  class="tableau" border="1px" style="border-collapse: collapse;">
+                <h3>Principaux élevages mondiaux</h3>
+                <table  class="tableau" id="tab2" border="1px" style="border-collapse: collapse;" >
                     <thead>
                         <tr>
                            <th scope="col">Espece</th>
                            <th scope="col">Nombre (1 000 tetes)</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody  id="tab2_body">
                         <tr>
                             <th scope="Row"><u>Poulet</u></th>
                             <td>21 409 683</td>
@@ -147,14 +150,43 @@
                            <td>58 832</td>
                        </tr>
                     </tbody>
+                    <tfoot>
+                        <th scope="row"><u>total</u></th>
+                        <td id="total2">26476363</td>
+                    </tfoot>
                 </table>
             </div>
-        </div> 
-        
+         
+        </div>   
     </section>
-    <footer>
-        <a href="mailto:ih_akli@esi.com">contact us</a>
-     
-    </footer>
+    <button class="open-button" onclick="openForm()">ajouter</button>
+
+    <div class="form-popup" id="myForm">
+        <form action="" class="form-container" onsubmit="add(); return false;" id="form" method="post">
+              <h4>Ajouter une ligne au tableau</h4>
+              <div class="selection">
+              <select id="select" onchange="select_tab(this)">
+                  <option value="1">productions végétales</option>
+                  <option value="2">élevages</option>
+              </select>
+              </div>
+              <div id="form_tab1">
+                <input type="text"  placeholder="Culture" name="culture">
+                <input type="text"  placeholder="Superficie cultivée" name="superficie">
+                <input type="text" placeholder="Production totale" name="production" >
+              </div>
+              <div id="form_tab2">
+                <input type="text"  placeholder="éspece" name="espece">
+                <input type="text"  placeholder="nombre" name="nombre">
+              </div>
+            
+              <button type="submit" class="btn" >Ajouter</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Annuler</button>
+            </form>
+          </div>
 </body>
+<footer>
+        <a href="mailto:ih_akli@esi.com">Contact us</a>
+        
+</footer>
 </html

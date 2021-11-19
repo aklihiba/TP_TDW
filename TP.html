@@ -3,7 +3,8 @@
 <head>    
     <title >Cooperative agricole</title>  
     <link href="style.css" rel="stylesheet" media="all" type="text/css">
-
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="JQscript.js"></script>
     <script src="script.js"></script>
 <body>
  
@@ -162,7 +163,7 @@
     <button class="open-button" onclick="openForm()">ajouter</button>
 
     <div class="form-popup" id="myForm">
-        <form action="" class="form-container" onsubmit="add(); return false;" id="form" method="post">
+        <form action="" class="form-container"  id="form">
               <h4>Ajouter une ligne au tableau</h4>
               <div class="selection">
               <select id="select" onchange="select_tab(this)">
@@ -171,16 +172,16 @@
               </select>
               </div>
               <div id="form_tab1">
-                <input type="text"  placeholder="Culture" name="culture">
-                <input type="text"  placeholder="Superficie cultivée" name="superficie">
-                <input type="text" placeholder="Production totale" name="production" >
+                <input type="text"  placeholder="Culture" name="culture" id="culture">
+                <input type="text"  placeholder="Superficie cultivée" name="superficie"  id="superficie">
+                <input type="text" placeholder="Production totale" name="production" id="production" >
               </div>
               <div id="form_tab2">
-                <input type="text"  placeholder="éspece" name="espece">
-                <input type="text"  placeholder="nombre" name="nombre">
+                <input type="text"  placeholder="éspece" name="espece" id="espece">
+                <input type="text"  placeholder="nombre" name="nombre" id="nombre">
               </div>
             
-              <button type="submit" class="btn" >Ajouter</button>
+              <button type="button" class="btn" id="sub">Ajouter</button>
               <button type="button" class="btn cancel" onclick="closeForm()">Annuler</button>
             </form>
           </div>

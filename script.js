@@ -21,7 +21,7 @@ function select_tab(selectobj){
         document.getElementById("form_tab2").style.display = "block";
     }
 }  
-
+/*
 function add(){
     let form =document.getElementById("form");
     if (form.elements['0'].value == "1"){
@@ -72,34 +72,4 @@ function add(){
     }
     return false;
    }
-/* 
-   function calcul(){
-    if( table.id=="tab1"){
-        let rows =  table.rows;
-        let sum1 = 0;
-        let sum2 = 0;
-        for(i=1 ; i< rows.length; i++){
-            let col = rows[i].cells;
-            sum1 =+ col[1].value;
-            if(col.length==3){
-                sum2 =+ col[2].value;
-            }
-        }
-        document.getElementById("total0").innerHTML = sum1;
-       document.getElementById("total1").innerHTML = sum2;
-    }   
-    if(table.id=="tab2"){
-        let rows =  table.rows;
-        let sum = 0;
-        for(i=1 ; i< rows.length; i++){
-            let col = rows[i].cells;
-            if(col.length==2){
-                 sum =+ col[1].value;  
-            }    
-        }
-        console.log(sum)
-        document.getElementById("total2").innerHTML = sum;
-      
-    }
-   }
- */  
+   */

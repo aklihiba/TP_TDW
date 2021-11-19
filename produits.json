@@ -1,0 +1,16 @@
+{
+    "agriculture":[
+    {
+        "type":"ble",
+        "superficie":"220417",
+        "production":"729 012"
+    }
+   
+    ],
+    "animaux":[
+        {
+        "espece":"poulet",
+        "nombre": "21409683"
+    }
+    ]
+}

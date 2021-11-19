@@ -46,12 +46,15 @@ function add(){
  });
 
 
-/*
+ let agri = [];
+ let animaux = [];
  $(document).ready(function(){
-     let agri = [];
-     let animaux = [];
-     // get the data
-     $.ajax({
+     get_data();
+ });
+
+ function get_data(){
+    // get the data
+    $.ajax({
 		method: "GET",
 		url: "produits.json",
 		dataType: "json",
@@ -59,24 +62,19 @@ function add(){
     	}).done(function (data) {
 		agri = data.agriculture;
 		animaux = data.animaux;
-       
         creer_tableaux();
 	});
- });
-
-
+ }
  function creer_tableaux(){
     let total0 = 0;
     let total1 = 0;
     let total2 = 0;
 
-    $("#tab1").empty();
-    $("#tab2").empty();
-
+    $("#tab1_body").empty();
 	$.each(agri, (index, a) => {
-        total0 =+ a.superficie;
-        total1 =+ a.production;
-		$("#tab1_body").appendChild(
+        total0 =  parseFloat(total0) +  parseFloat(a.superficie);
+        total1 =  parseFloat(total1) +  parseFloat(a.production);
+		$("#tab1_body").append(
 			`<tr>
 							<th scope="row"><u>${a.type}<u></th>
 							<td>${a.superficie}</td>
@@ -84,6 +82,7 @@ function add(){
 						</tr>`
 		);
 	});
+    // insertion du total
     $("#tab1>tfoot").empty();
     $("#tab1>tfoot").append(
         `<th scope="row"><u>total</u></th>
@@ -91,9 +90,10 @@ function add(){
         <td id="total1">${total1}</td>`
 
     );
+    $("#tab2_body").empty();
 	$.each(animaux, (index, a) => {
-        total2 =+ a.nombre;
-		$("#tab2_body").appendChild(
+        total2 =  parseFloat(total2) +  parseFloat(a.nombre);
+		$("#tab2_body").append(
 			`<tr>
                     <th scope="row"><u>${a.espece}<u></th>
                     <td>${a.nombre}</td>
@@ -108,5 +108,10 @@ function add(){
     );
 	
  } 
- */
+
+setInterval(function () {
+	get_data();
+}, 3000);
+
+ 
 

@@ -4,13 +4,21 @@
         "type":"ble",
         "superficie":"220417",
         "production":"729 012"
+    },
+    {
+        "type":"Mais",
+        "superficie":"184800",
+        "production":"729012"
     }
-   
     ],
     "animaux":[
         {
         "espece":"poulet",
         "nombre": "21409683"
+    },
+    {
+        "espece":"Canard",
+        "nombre": "1131984"
     }
     ]
 }

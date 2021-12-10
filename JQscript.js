@@ -65,6 +65,7 @@ function add(){
         creer_tableaux();
 	});
  }
+
  function creer_tableaux(){
     let total0 = 0;
     let total1 = 0;
@@ -113,5 +114,5 @@ setInterval(function () {
 	get_data();
 }, 3000);
 
- 
+
 
